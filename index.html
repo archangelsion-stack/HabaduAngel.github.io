@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#eaf5ff" />
+  <title>Happy Birthday, Pookie!!</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="site-shell">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="heart-field" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="tiny-heart">♥</div>
+      <span>made with a whole lot of love</span>
+      <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Toggle ambient sound" aria-pressed="false">♪</button>
+    </header>
+
+    <div class="progress-dots" aria-label="Birthday card progress">
+      <span class="progress-dot active"></span><span class="progress-dot"></span><span class="progress-dot"></span><span class="progress-dot"></span><span class="progress-dot"></span><span class="progress-dot"></span>
+    </div>
+
+    <section class="screen active" id="screen-welcome" data-step="0" aria-labelledby="welcome-title">
+      <div class="eyebrow">a little something for you <span>✦</span></div>
+      <h1 id="welcome-title">Happy Birthday! <span class="blue-heart">♥</span></h1>
+      <div class="mascot-wrap" aria-hidden="true">
+        <div class="mascot-glow"></div>
+        <div class="mascot">
+          <div class="ear ear-left"></div><div class="ear ear-right"></div>
+          <div class="face">
+            <div class="eye eye-left"><i></i></div><div class="eye eye-right"><i></i></div>
+            <div class="blush blush-left"></div><div class="blush blush-right"></div>
+            <div class="beak"></div><div class="tiny-bow">⌣</div>
+          </div>
+        </div>
+      </div>
+      <div class="kaomoji">(｡･ω･｡)ﾉ♡</div>
+      <p class="instruction">Click the next button!! <span>(｡&gt;ω&lt;｡)</span> <b>♥</b></p>
+      <button class="primary-btn next-btn" type="button" data-next="1">Next!! <span>^w^</span></button>
+    </section>
+
+    <section class="screen" id="screen-memories" data-step="1" aria-labelledby="memories-title">
+      <div class="eyebrow">little snapshots of us <span>✦</span></div>
+      <h2 id="memories-title">Our Memories :3 <span>🥹</span></h2>
+      <p class="section-note">Every tiny moment with you is one I want to keep.</p>
+      <div class="memory-grid">
+        <button class="memory-card card-blue" type="button" data-caption="The kind of silly day that becomes a forever memory."><span class="memory-art"><i class="cloud">☁</i><i class="sun">☼</i><strong>our<br>little<br>world</strong></span><span class="memory-label">the good days</span></button>
+        <button class="memory-card card-lavender" type="button" data-caption="You make even the most ordinary adventures feel magical."><span class="memory-art"><i class="sparkle">✦</i><i class="planet">◒</i><strong>adventure<br>mode</strong></span><span class="memory-label">side quests</span></button>
+        <button class="memory-card card-peach" type="button" data-caption="Proof that you are my favorite person to laugh with."><span class="memory-art"><i class="smile">◡</i><i class="star-row">✦ ✦ ✦</i><strong>laughing<br>with you</strong></span><span class="memory-label">best laughs</span></button>
+        <button class="memory-card card-pink" type="button" data-caption="Home is wherever we are together."><span class="memory-art"><i class="house">⌂</i><i class="heart-mark">♥</i><strong>you feel<br>like home</strong></span><span class="memory-label">soft places</span></button>
+        <button class="memory-card card-sky" type="button" data-caption="The world is brighter when you are in it."><span class="memory-art"><i class="rainbow">⌒⌒⌒</i><i class="cloud cloud-2">☁</i><strong>more<br>sunshine<br>please</strong></span><span class="memory-label">bright days</span></button>
+        <button class="memory-card card-mint" type="button" data-caption="I would choose you in every timeline."><span class="memory-art"><i class="orbit">◎</i><i class="comet">✧</i><strong>my<br>favorite<br>person</strong></span><span class="memory-label">always you</span></button>
+      </div>
+      <button class="primary-btn next-btn" type="button" data-next="2">Next <span>→</span></button>
+    </section>
+
+    <section class="screen" id="screen-song" data-step="2" aria-labelledby="song-title">
+      <div class="eyebrow">press play when you’re ready <span>✦</span></div>
+      <h2 id="song-title">♫ A Song Just For You</h2>
+      <div class="music-card">
+        <div class="album-art" aria-hidden="true">
+          <div class="vinyl"><span></span></div>
+          <div class="music-spark spark-a">✦</div><div class="music-spark spark-b">♡</div>
+        </div>
+        <div class="track-copy">
+          <p class="track-kicker">a tiny birthday soundtrack</p>
+          <h3>Roommates</h3>
+          <p class="artist">Malcolm Todd · for you</p>
+        </div>
+        <button class="play-btn" id="play-song" type="button" aria-label="Play birthday soundtrack"><span class="play-icon">▶</span></button>
+        <div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="track-progress"><span id="track-fill"></span></div>
+        <div class="track-times"><span>0:00</span><span id="track-time">0:00</span></div>
+      </div>
+      <blockquote>“This song reminds me of you. Every time I listen to it, I realize how much I want to be closer to you, but I don't always know how.”</blockquote>
+      <button class="primary-btn next-btn" type="button" data-next="3">Next <span>→</span></button>
+    </section>
+
+    <section class="screen" id="screen-letter-teaser" data-step="3" aria-labelledby="teaser-title">
+      <div class="envelope-icon" aria-hidden="true"><span>✉</span></div>
+      <h2 id="teaser-title">I wrote a letter for you...</h2>
+      <p class="section-note">It has been waiting very patiently for this exact moment.</p>
+      <button class="primary-btn next-btn" type="button" data-next="4">Next <span>→</span></button>
+      <div class="tiny-note">(you might want to grab a tissue)</div>
+    </section>
+
+    <section class="screen" id="screen-open" data-step="4" aria-labelledby="open-title">
+      <div class="eyebrow">one last little question <span>✦</span></div>
+      <h2 id="open-title">Do you want to open it? <span>ヾ(≧▽≦*)o</span></h2>
+      <div class="cat-card" aria-label="A cute illustrated cat">
+        <div class="cat-ears"><i></i><i></i></div>
+        <div class="cat-face"><div class="cat-eye"></div><div class="cat-eye"></div><div class="cat-nose">⌄</div><div class="cat-mouth">ω</div><div class="cat-whisker left"></div><div class="cat-whisker right"></div></div>
+      </div>
+      <div class="open-actions">
+        <button class="primary-btn" id="open-letter" type="button">Open it <span>♡</span></button>
+        <button class="secondary-btn" id="not-yet" type="button">Not yet</button>
+      </div>
+      <p class="not-yet-message" id="not-yet-message" aria-live="polite"></p>
+    </section>
+
+    <section class="screen" id="screen-letter" data-step="5" aria-labelledby="letter-title">
+      <div class="letter-paper">
+        <div class="letter-tape" aria-hidden="true"></div>
+        <div class="letter-hearts" aria-hidden="true">♥ ♥ ♥</div>
+        <h2 id="letter-title">Happy Birthday Pookie!!</h2>
+        <div class="letter-body">
+          <p>Happy birthday, my favorite person. I’m so glad I got to meet you, and I’m grateful for every laugh, every little check-in, and every weird side quest we’ve shared.</p>
+          <p>Thank you for being so wonderfully <em>you</em>. You keep going even when things get hard, and that inspires me more than you know. I hope today gives some of that same warmth back to you.</p>
+          <p>But most of all, you deserve the very best—not just today, but every day. Enjoy your day, be very happy, and remember that you are loved a whole lot.</p>
+          <p class="signature">Always cheering for you,<br><strong>your biggest fan</strong> <span>♥</span></p>
+        </div>
+        <button class="primary-btn replay-btn" id="replay" type="button">Again..? <span>↻</span></button>
+      </div>
+    </section>
+
+    <div class="memory-modal" id="memory-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-card">
+        <button class="modal-close" type="button" data-close-modal aria-label="Close memory">×</button>
+        <div class="modal-mini-art" aria-hidden="true">✦ ♥ ✦</div>
+        <h3 id="modal-title">A little memory</h3>
+        <p id="modal-caption"></p>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
