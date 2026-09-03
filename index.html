@@ -446,7 +446,7 @@
     }
 
     function renderMusic() {
-      $('#music-list').innerHTML = CONFIG.music.slice(0, 2).map((track, index) => `<article class="track-card" data-track-index="${index}"><div class="album-art${index ? ' alt' : ''}" aria-hidden="true"><div class="vinyl"><span></span></div></div><div class="track-main"><p class="track-kicker">birthday soundtrack ${index + 1}</p><h3>${escapeHtml(track.title)}</h3><p class="artist">${escapeHtml(track.artist)}</p></div><button class="play-track" type="button" aria-label="Play ${escapeHtml(track.title)}">▶</button><div class="waveform" aria-hidden="true">${Array.from({ length: 18 }, (_, bar) => `<i style="--bar:${7 + (bar % 5) * 3}px"></i>`).join('')}</div><div class="track-progress"><input type="range" min="0" max="100" value="0" aria-label="${escapeHtml(track.title)} progress"><span class="track-time">0:00 / 0:00</span></div></article>`).join('');
+      $('#music-list').innerHTML = CONFIG.music.slice(0, 2).map((track, index) => `<article class="track-card" data-track-index="${index}"><div class="album-art${index ? ' alt' : ''}" aria-hidden="true"><div class="vinyl"><span></span></div></div><div class="track-main"><p class="track-kicker">song no. ${index + 1}</p><h3>${escapeHtml(track.title)}</h3><p class="artist">${escapeHtml(track.artist)}</p></div><button class="play-track" type="button" aria-label="Play ${escapeHtml(track.title)}">▶</button><div class="waveform" aria-hidden="true">${Array.from({ length: 18 }, (_, bar) => `<i style="--bar:${7 + (bar % 5) * 3}px"></i>`).join('')}</div><div class="track-progress"><input type="range" min="0" max="100" value="0" aria-label="${escapeHtml(track.title)} progress"><span class="track-time">0:00 / 0:00</span></div></article>`).join('');
       CONFIG.music.slice(0, 2).forEach((track, index) => setupTrack(track, index));
     }
 
@@ -557,7 +557,7 @@
       if (!letter) return;
       setStandalonePhoto($('#letter-modal-photo'), letter, index, 'LETTER');
       $('#letter-modal-title').textContent = letter.title;
-      $('#letter-copy').innerHTML = [...letter.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`), '<p class="letter-signature">Always cheering for you,<br><strong>your biggest fan</strong> <span>♥</span></p>'].join('');
+      $('#letter-copy').innerHTML = [...letter.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`), '<p class="letter-signature">Always cheering for you,<br><strong>tunay mong tropa</strong> <span>♥</span></p>'].join('');
       $('#letter-modal').hidden = false;
       celebrate(14);
     }
@@ -580,7 +580,7 @@
     $$('[data-go]').forEach((button) => button.addEventListener('click', () => goTo(button.dataset.go)));
     $('#open-letters').addEventListener('click', () => goTo('letters'));
     $('#not-yet').addEventListener('click', () => { $('#not-yet-message').textContent = 'Okay, I’ll wait... but there are nine really good letters ♡'; });
-    $('#replay').addEventListener('click', () => { audioStates.forEach((state) => state && stopTrack(state, true)); $('#not-yet-message').textContent = ''; goTo('welcome'); showToast('Let’s do that again, birthday star ✦'); });
+    $('#replay').addEventListener('click', () => { audioStates.forEach((state) => state && stopTrack(state, true)); $('#not-yet-message').textContent = ''; goTo('welcome'); showToast('Let’s do that again, neca batumbakal'); });
     $('#sound-toggle').addEventListener('click', () => { const button = $('#sound-toggle'); const enabled = button.getAttribute('aria-pressed') === 'true'; button.setAttribute('aria-pressed', String(!enabled)); if (!enabled) playChime(); showToast(enabled ? 'Sparkle sound off' : 'A little sparkle for you ✦'); });
 
     function showToast(message) { const element = $('#toast'); element.textContent = message; element.classList.add('show'); clearTimeout(toastTimeout); toastTimeout = setTimeout(() => element.classList.remove('show'), 2700); }
